@@ -203,9 +203,10 @@ contract TradingBot is DyDxFlashLoan {
     uint256 FLAGS = 0;
 
     // ZRX Config
-    address ZRX_EXCHANGE_ADDRESS = 0x61935CbDd02287B511119DDb11Aeb42F1593b7Ef;
+    address ZRX_EXCHANGE_ADDRESS = 0x12459C951127e0c374FF9105DdA097662A027093;
     address ZRX_ERC20_PROXY_ADDRESS = 0x95E6F48254609A6ee006F7D493c8e5fB97094ceF;
-    address ZRX_STAKING_PROXY = 0xa26e80e7Dea86279c6d778D702Cc413E6CFfA777; // Fee collector
+    address ZRX_STAKING_PROXY = 0xa26e80e7Dea86279c6d778D702Cc413E6CFfA777;  // Fee collector
+    //old address 0xa26e80e7Dea86279c6d778D702Cc413E6CFfA777;
 
     // Modifiers
     modifier onlyOwner() {
@@ -338,7 +339,7 @@ contract TradingBot is DyDxFlashLoan {
     function approveWeth(uint256 _amount) public onlyOwner {
         _approveWeth(_amount);
     }
-
+    // Contract Unreachable
     function _approveWeth(uint256 _amount) internal {
         IERC20(WETH).approve(ZRX_STAKING_PROXY, _amount);
     }
